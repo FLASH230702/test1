@@ -1,9 +1,11 @@
 <!DOCTYPE html> 
 <html> 
 
-<head> 
+<head>
 	<title>HTML Calculator</title> 
   <script src="main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.js" integrity="sha512-TaKu3GlWLNU3fyPcvsSHSh44vX/Z43ePJDRTJr7IuUKVlUHHsHm7ODYNt5xffy75M6MOXsh7p+VyXCk5icuoxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.min.js" integrity="sha512-k2XqlNMT3e0wVsA5tq6GAYn50wC6/vLk4jS5ytmtEz5ZOcug2eOzQtn8N3Q5Jd61kjLtjTjvZMIHISovqG6aMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="style.css">
 </head> 
 
@@ -18,28 +20,28 @@
 		</tr> 
 
 		<tr> 
-			<td><input onclick="button1()" type="button" value="1"></td> 
-			<td><input onclick="" type="button" value="2"></td> 
-			<td><input onclick="" type="button" value="3"></td> 
-			<td><input onclick="" type="button" value="/"></td> 
+			<td><input onclick="button('1')" type="button" value="1"></td> 
+			<td><input onclick="button('2')" type="button" value="2"></td> 
+			<td><input onclick="button('3')" type="button" value="3"></td> 
+			<td><input onclick="button('/')" type="button" value="/"></td> 
 		</tr> 
 		<tr> 
-			<td><input onclick="" type="button" value="4"></td> 
-			<td><input onclick="" type="button" value="5"></td> 
-			<td><input onclick="" type="button" value="6"></td> 
-			<td><input onclick="" type="button" value="*"></td> 
+			<td><input onclick="button('4')" type="button" value="4"></td> 
+			<td><input onclick="button('5')" type="button" value="5"></td> 
+			<td><input onclick="button('6')" type="button" value="6"></td> 
+			<td><input onclick="button('*')" type="button" value="*"></td> 
 		</tr> 
 		<tr> 
-			<td><input onclick="" type="button" value="7"></td> 
-			<td><input onclick="" type="button" value="8"></td> 
-			<td><input onclick="" type="button" value="9"></td> 
-			<td><input onclick="" type="button" value="-"></td> 
+			<td><input onclick="button('7')" type="button" value="7"></td> 
+			<td><input onclick="button('8')" type="button" value="8"></td> 
+			<td><input onclick="button('9')" type="button" value="9"></td> 
+			<td><input onclick="button('-')" type="button" value="-"></td> 
 		</tr> 
 		<tr> 
-			<td><input onclick="" type="button" value="0"></td> 
-			<td><input onclick="" type="button" value="."></td> 
-			<td><input onclick="" type="button" value="="></td> 
-			<td><input onclick="" type="button" value="+"></td> 
+			<td><input onclick="button('0')" type="button" value="0"></td> 
+			<td><input onclick="button('.')" type="button" value="."></td> 
+			<td><input onclick="calc()" type="button" value="="></td> 
+			<td><input onclick="button('+')" type="button" value="+"></td> 
 		</tr> 
 	</table> 
 </body> 

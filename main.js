@@ -1,7 +1,13 @@
 function cancel(){
-  document.getElementById("result").value='';
+  document.getElementById("result").value="";
 }
 
-function button1(){
-  document.getElementById("result").value =result + 1;
+function button(val){
+  document.getElementById("result").value += val;
+}
+
+function calc(){
+  let x = document.getElementById("result").value
+  let y = math.evaluate(x)
+  document.getElementById("result").value = y;
 }

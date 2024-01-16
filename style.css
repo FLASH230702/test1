@@ -6,8 +6,8 @@ table {
 
 input[type="button"] { 
   width: 100%; 
-  padding: 20px 40px; 
-  background-color: green; 
+  padding: 10px 20px; 
+  background-color: black; 
   color: white; 
   font-size: 24px; 
   font-weight: bold; 
@@ -16,7 +16,7 @@ input[type="button"] {
 } 
 
 input[type="text"] { 
-  padding: 20px 30px; 
+  padding: 10px 15px; 
   font-size: 24px; 
   font-weight: bold; 
   border: none; 
