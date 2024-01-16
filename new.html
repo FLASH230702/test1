@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+	<title>HTML Calculator</title> 
+  <script src="main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.js" integrity="sha512-TaKu3GlWLNU3fyPcvsSHSh44vX/Z43ePJDRTJr7IuUKVlUHHsHm7ODYNt5xffy75M6MOXsh7p+VyXCk5icuoxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.min.js" integrity="sha512-k2XqlNMT3e0wVsA5tq6GAYn50wC6/vLk4jS5ytmtEz5ZOcug2eOzQtn8N3Q5Jd61kjLtjTjvZMIHISovqG6aMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="style.css">
+</head> 
+
+<body> 
+
+	<table id="calcu"> 
+		<tr> 
+			<td colspan="3"> 
+				<input type="text" id="result"> 
+			</td> 
+			<td><input onclick="cancel()" type="button" value="c"></td> 
+		</tr> 
+
+		<tr> 
+			<td><input onclick="calnew(event)" type="button" value="1"></td> 
+			<td><input onclick="calnew(event)" type="button" value="2"></td> 
+			<td><input onclick="calnew(event)" type="button" value="3"></td> 
+			<td><input onclick="calnew(event)" type="button" value="/"></td> 
+		</tr> 
+		<tr> 
+			<td><input onclick="calnew(event)" type="button" value="4"></td> 
+			<td><input onclick="calnew(event)" type="button" value="5"></td> 
+			<td><input onclick="calnew(event)" type="button" value="6"></td> 
+			<td><input onclick="calnew(event)" type="button" value="x"></td> 
+		</tr> 
+		<tr> 
+			<td><input onclick="calnew(event)" type="button" value="7"></td> 
+			<td><input onclick="calnew(event)" type="button" value="8"></td> 
+			<td><input onclick="calnew(event)" type="button" value="9"></td> 
+			<td><input onclick="calnew(event)" type="button" value="-"></td> 
+		</tr> 
+		<tr> 
+			<td><input onclick="calnew(event)" type="button" value="0"></td> 
+			<td><input onclick="calnew(event)" type="button" value="."></td> 
+			<td><input onclick="calc()" type="button" value="="></td> 
+			<td><input onclick="calnew(event)" type="button" value="+"></td> 
+		</tr> 
+	</table> 
+</body> 
+
+</html> 
