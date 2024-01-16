@@ -3,11 +3,12 @@ function cancel(){
 }
 
 function button(val){
-  document.getElementById("result").value += val;
+  document.getElementById("result").value += val
 }
 
 function calc(){
   let x = document.getElementById("result").value
-  let y = math.evaluate(x)
+  let n = x.replace('x', '*')
+  let y = math.evaluate(n)
   document.getElementById("result").value = y;
 }
