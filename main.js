@@ -19,6 +19,10 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+function myFunction(){
+  document.getElementById("result").innerHTML = hey;
+}
+
 function calnew(event) { 
   document.addEventListener('keydown'); {
     if (event.key == '0' || event.key == '1' 
