@@ -1,0 +1,549 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN”
+“http://www.w3.org/TR/html4/strict.dtd">
+<html class="no-js" lang="zxx">
+
+<!--!----------------------------------------------------------------------------------------------------------------- -->
+<!--!                                                 HEAD                                                             -->
+<!--!----------------------------------------------------------------------------------------------------------------- -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home | PM Speciality Coatings</title>
+    <meta name="description" content="">
+    <meta name="keywords"
+        content="PTFE, PTFE Coatings, Speciality Coatings, O-rings, Chemlok Coatings, Gasket Coatings, Rubber Coatings, Teflon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon/logo.avif">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/style.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+
+<!--!----------------------------------------------------------------------------------------------------------------- -->
+<!--!                                                 BODY                                                             -->
+<!--!----------------------------------------------------------------------------------------------------------------- -->
+
+<body>
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 HEADER                                                           -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area d-none d-lg-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 ">
+                            <div class="social_media_links">
+                                <a href="https://www.facebook.com/profile.php?id=100091205307263&mibextid=ZbWKwL">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/mrudula-jadhav-6391ba48">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="mailto:pmscoaters@gmail.com" target="_blank"> <i
+                                                class="fa fa-envelope"></i> pmscoaters@gmail.com</a></li>
+                                    <li><a href="tel: 233429093" target="_blank"> <i class="fa fa-phone"></i> +91 9422701244</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--!----------------------------------------------------------------------------------------------------------------- -->
+            <!--!                                                 NAVIGATION                                                       -->
+            <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="header_bottom_border">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-3 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="img/logo/tcb_logo_header_small.avif" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Navigation -->
+                            <div class="col-xl-6 col-lg-7">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="index.html">Home</a></li>
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="service.html">Services</a></li>
+                                            <li><a href="clientes.html">Products</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SLIDER AREA                                                      -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <!-- Slider 1 -->
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> Customized Speciality Coating Solutions <br>
+                                    For More Than 20 Years </h3>
+                                <p>Solutions designed for specific needs, which make our clients projects viable.</p>
+                                <div class="video_service_btn">
+                                    <a href="service.html" class="boxed-btn3">Services</a>
+                                    <a href="about.html" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider 2 -->
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> Functional Coatings 
+                                    To Suit The Needs<br> Of Every Industry </h3>
+                                <p>Special Coatings On Elastomers, Metals, Polymers & Wood. </p>
+                                <div class="video_service_btn">
+                                    <a href="service.html" class="boxed-btn3">Services</a>
+                                    <a href="about.html" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider 3 -->
+            <div class="single_slider  d-flex align-items-center slider_bg_3 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> Fully Automated State Of The Art Infrastructure </h3>
+                                <p>Coating Applications For Miniature to Gigantic Objects. </p>
+                                <div class="video_service_btn">
+                                    <a href="service.html" class="boxed-btn3">Services</a>
+                                    <a href="about.html" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SERVICE AREA                                                     -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- service_area_start -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-50">
+                        <h3>Explore Our Solutions</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service service_bg_1">
+                        <div class="service_hover">
+                            <img src="img/svg_icon/servicos_particulasres_icon.svg" alt="">
+                            <h3>Decorative Coatings</h3>
+                            <div class="hover_content">
+                                <div class="hover_content_inner">
+                                    <h4>Decorative Coatings</h4>
+                                    <p>It is scratch resistant, and giving a bright color to metal and plastic substrates, are used in many applications, including automotive interior and exterior parts, consumer products and electronics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service service_bg_2">
+                        <div class="service_hover">
+                            <img src="img/svg_icon/servicos_empresariais_icon.svg" alt="">
+                            <h3>Functional Coatings</h3>
+                            <div class="hover_content">
+                                <div class="hover_content_inner">
+                                    <h4>Functional Coatings</h4>
+                                    <p>Functional coating means a coating that serves a purpose beyond decoration or protection of the substrate being coated. Some Examples are PTFE, Chemlok, EverSlik, Emralon, Teflon, Xylan, etc.
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service service_bg_3">
+                        <div class="service_hover">
+                            <img src="img/svg_icon/servicos_internacionais.svg" alt="">
+                            <h3>Colour Coatings</h3>
+                            <div class="hover_content">
+                                <div class="hover_content_inner">
+                                    <h4>Colour Coatings</h4>
+                                    <p>Color coating means a pigmented coating, excluding adhesion promoters, primers, and multicolor coatings. Color coating includes metallic/iridescent coatings.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SOBRE NOS AREA                                                   -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- about  -->
+    <div class="about_area ">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters align-items-center">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_image">
+                        <img src="img/about/about.avif" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="about_info">
+                        <h3>More Than a Company, PM Speciality Is a Concept</h3>
+                        <p>An ISO 9001:2015 Company which started its activity more than 20 years ago,<br>
+                            with the clear conviction of satisfying the needs of its customers.
+                        </p>
+                        <ul>
+                            <li> We approach opportunities with imagination and flexibility. </li>
+                            <li> We perform excellent services tailored to our Customers. </li>
+                            <li> We promptly and explicitly assume our responsibilities.</li>
+                        </ul>
+
+                        <div class="about_btn">
+                            <a class="boxed-btn3" href="about.html">About Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ about  -->
+    <ensp></ensp>
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SOBRE NOS CARACTARETICAS                                         -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- about wrap  -->
+    <div class="about_wrap_area about_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service_wrap text-center">
+                        <img src="img/svg_icon/target.svg" alt="">
+                        <h3>Mission</h3>
+                        <p>Develop and implement comprehensive solutions in the fields of Coatings </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service_wrap text-center">
+                        <img src="img/svg_icon/inovacao.svg" alt="">
+                        <h3>Innovation</h3>
+                        <p>Imagination and flexibility, responses adapted to market challenges </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service_wrap text-center">
+                        <img src="img/svg_icon/qualidade.svg" alt="">
+                        <h3>Quality</h3>
+                        <p>Services of excellence for Clients, with speed, accuracy and security </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ about wrap  -->
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SOBRE NOS CARACTARETICAS                                         -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- financial_solution -->
+    <div class="financial_solution_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="financial_active owl-carousel">
+                        <div class="single_finalcial_wrap">
+                            <h3>PTFE Coatings</h3>
+                            <p> PTFE coatings are the first choice where low friction, non-stick, dry lubrication or corrosion 
+                                resistance are required. Commonly referred to as Teflon® or Xylan®. PTFE coatings, or Polytetrafluoroethylene
+                                are superior non-stick fluoropolymer coatings with a very durable thin film coating. These products
+                                have the highest operating temperature of any fluoropolymer and have an extremely low coefficient 
+                                of friction, good abrasion resistance and chemical resistance. This coating is normally used where 
+                                a smooth, low friction, corrosion resistant coating is necessary. </p>
+                        </div>
+                        <div class="single_finalcial_wrap">
+                            <h3>Chemlok Coatings</h3>
+                            <p>Rubber to metal bonding is when a rubber part has to be adhered to a metal part, a metal component is chemically prepared and is attached or encapsulated as part of the process to become a bonded rubber part.
+
+                                The basis of a quality bond depends on the proper application which is essential for maximum results. Whether the process is dipping or spraying, it must maximize efficiency and optimize results.
+                                </p>
+                        </div>
+                        <div class="single_finalcial_wrap">
+                            <h3>Gasket Coatings</h3>
+                            <p>Coated gastkets are also used as sealing gaskets in electrical motors, transformers, auto-Engines and various Electrical Appliances.
+                                Rubber coated gaskets are used for excellent resistance and good sealing performance in engines.<br>
+                                SInce it combines the rigidity of metal with elasticity of rubber. It is also used as sheet material for sound, vibration and insulation properties.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="finance_thumb">
+                        <img src="img/about/sobre_nos_grupo.avif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ financial_solution -->
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SOBRE NOS CARACTARETICAS                                         -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+   
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                 SOBRE NOS CARACTARETICAS                                         -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- project  -->
+    <div class="project_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="project_info text-center">
+                        <h3>Contact Us For Your Coating Requirements!</h3>
+                        <p>We are working in association with many renowned industries in automotive,<br> aerospace, electronics, electrical and various esteemed projects.</p>
+                        <a href="contact.html" class="boxed-btn3-white">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ project  -->
+
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                FOOTER                                                            -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="img/logo/tcb_logo_footer.avif" alt="">
+                                </a>
+                            </div>
+                            <p>
+                                Coating Solutions tailored to the specific needs of each customer.
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="https://www.facebook.com/profile.php?id=100091205307263&mibextid=ZbWKwL">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/mrudula-jadhav-6391ba48">
+                                            <i class="ti-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul>
+                                <li><a href="service.html">Individuals</a></li>
+                                <li><a href="service.html">Business</a></li>
+                                <li><a href="service.html">International</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Pages
+                            </h3>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="service.html">Services</a></li>
+                                <li><a href="clientes.html">Information</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Address
+                            </h3>
+                            <ul>
+                                <li>Plot No. L-22, <br> MIDC Ambad, Nashik.422010 Maharashtra INDIA
+                                </li>
+                                <li><a href="tel:+919422701244" target="_blank">+91 9422701244</li></a>
+                                <li><a href="mailto:pmscoaters@gmail.com" target="_blank"> pmscoaters@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="footer_border"></div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            © Copyright 2023, PM Speciality Coatings<br>All Rights Reserved 
+                            </a>
+                            <script>document.write(new Date().getFullYear());</script>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+    <!--!                                                SCRIPTS                                                           -->
+    <!--!----------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/slick.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script>
+        var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?77521';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+      "enabled":true,
+      "chatButtonSetting":{
+          "backgroundColor":"#4dc247",
+          "ctaText":"Message Us",
+          "borderRadius":"25",
+          "marginLeft":"0",
+          "marginBottom":"50",
+          "marginRight":"50",
+          "position":"right"
+      },
+      "brandSetting":{
+          "brandName":"PM Speciality Coatings",
+          "brandSubTitle":"Typically replies within a day",
+          "brandImg":"https://cdn.clare.ai/wati/images/WATI_logo_square_2.avif",
+          "welcomeText":"Hi there!\nHow can I help you?",
+          "messageText":"",
+          "backgroundColor":"#0a5f54",
+          "ctaText":"Start Chat",
+          "borderRadius":"25",
+          "autoShow":false,
+          "phoneNumber":"918208038515"
+      }
+    };
+        s.onload = function() {
+            CreateWhatsappChatWidget(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
+</body>
+
+</html>
