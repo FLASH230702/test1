@@ -1,0 +1,55 @@
+@media only screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  html {
+    font-size: 16px;
+  }
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+  .container,
+  .contact-section,
+  .col,
+  .form-group {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .container,
+  .col,
+  .form-group {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container,
+  .col,
+  .form-group {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container,
+  .col,
+  .form-group {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .navbar-toggler-icon {
+    background-color: #007bff;
+  }
+}
