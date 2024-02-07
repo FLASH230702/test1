@@ -1,0 +1,38 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $message = filter_var(trim($_POST["message"]), FILTER_SANITIZE_STRING);
+
+    if (empty($name) || empty($email) || empty($message)) {
+      header("Location: " . $_SERVER['PHP_SELF'] . "?status=error");
+      exit;
+    }
+
+    // Email validation
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      header("Location: " . $_SERVER['PHP_SELF'] . "?status=error");
+      exit;
+    }
+
+    $to = "tanishqjadhav2002@gmail.com";
+    $subject = "Quote Request from $name";
+    $body = "Name: $name\nEmail: $email\n\n$message";
+    $headers = "From: $name <$email>" . filter_var($email,$name, FILTER_SANITIZE_EMAIL) . "\r\n";
+    $headers .= "Reply-To: $name <$email>" . "\r\n";
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/plain;charset=UTF-8" . "\r\n";
+        
+    $mailsuccess = mail($to,$subject,$body,$headers);
+
+    if ($mailSuccess) {
+      header("Location: " . $_SERVER['PHP_SELF'] . "?status=success");
+      exit;
+    } else {
+      header("Location: " . $_SERVER['PHP_SELF'] . "?status=error");
+      exit;
+    }
+  } else {
+    echo '<script>alert("Please Fill the Form Fields Correctly")</script>';
+  }
+?>

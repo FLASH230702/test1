@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .error-container {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #ff7e5f;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        a {
+            background-color: #ff7e5f;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #ff6c4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Oops!</h1>
+        <p>Something went wrong.</p>
+        <p>We're working to fix it.</p>
+        <a href="javascript:history.back()">Go Back</a>
+    </div>
+</body>
+</html>
