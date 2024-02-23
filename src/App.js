@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import Entry from "./Entry";
+import Profiles from "./Profiles";
+import ProfileDetails from "./ProfileDetails";
+import Boom from "./Boom";
+import Blast from "./Blast";
 
-function App() {
+// const Navbar = React.lazy(() => import("./Navbar"));
+// const Home = React.lazy(() => import("./Home"));
+// const Entry = React.lazy(() => import("./Entry"));
+// const Profiles = React.lazy(() => import("./Profiles"));
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/form">
+              <Entry />
+            </Route>
+            <Route exact path="/profiles">
+              <Profiles />
+            </Route>
+            <Route exact path="/profiles/:id">
+              <ProfileDetails />
+            </Route>
+            <Route exact path="/boom">
+              <Boom />
+            </Route>
+            <Route exact path="/blast">
+              <Blast />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
+
+// Formik / useForm, YUP validations
