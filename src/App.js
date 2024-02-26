@@ -7,6 +7,8 @@ import Profiles from "./Profiles";
 import ProfileDetails from "./ProfileDetails";
 import Boom from "./Boom";
 import Blast from "./Blast";
+import SignIn from "./SignIn";
+import Tasks from "./Tasks";
 
 // const Navbar = React.lazy(() => import("./Navbar"));
 // const Home = React.lazy(() => import("./Home"));
@@ -37,6 +39,12 @@ const App = () => {
             </Route>
             <Route exact path="/blast">
               <Blast />
+            </Route>
+            <Route exact path="/signin">
+              <SignIn />
+            </Route>
+            <Route exact path="/tasks">
+              <Tasks />
             </Route>
           </Switch>
         </div>

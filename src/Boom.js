@@ -19,7 +19,7 @@ const Boom = () => {
 
       return () => clearInterval(intervalId);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [number]);
 
   const handleClick = () => {

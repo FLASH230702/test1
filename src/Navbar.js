@@ -4,12 +4,10 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <h1>React Website</h1>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/form">New User</Link>
-        <Link to="/profiles">Profiles</Link>
-        <Link to="/boom">Boom</Link>
-      </div>
+      <Link to="/">Home</Link>
+      <Link to="/form">New User</Link>
+      <Link to="/boom">Boom</Link>
+      <Link to="/signin">Sign In</Link>
     </nav>
   );
 };

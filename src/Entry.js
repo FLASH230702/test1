@@ -11,12 +11,19 @@ export const SignupSchema = Yup.object().shape({
     .min(2, "Name Should be at least 2 characters")
     .max(50, "Name is too long")
     .required("This is a Required Field"),
+  username: Yup.string()
+    .required("This is a required Field")
+    .min(2, "Username Should be at least 2 characters long"),
   email: Yup.string()
     .matches(emailRegex, "Email is not valid")
     .required("This is a Required Field"),
   mobile: Yup.string()
     .matches(phoneRegex, "Mobile Number is not valid")
     .required("This is a Required Field"),
+  password: Yup.string()
+    .required("This is a Required Field")
+    .min(8, "Password should have Minimum 8 Characters")
+    .max(30, "Password is too long"),
 });
 
 const Entry = (props) => {
@@ -37,8 +44,10 @@ const Entry = (props) => {
       <Formik
         initialValues={{
           name: "",
+          username: "",
           email: "",
           mobile: "",
+          password: "",
           gender: "Male",
         }}
         validationSchema={SignupSchema}
@@ -46,32 +55,66 @@ const Entry = (props) => {
       >
         {({ errors, touched }) => (
           <Form>
-            <label>Full Name:</label>
+            <label>
+              Full Name:{" "}
+              {errors.name && touched.name ? (
+                <sub style={{ color: "red" }}>{errors.name}</sub>
+              ) : null}
+            </label>
             <Field
               type="text"
               placeholder="Name"
               name="name"
               autoComplete="off"
             />
-            {errors.name && touched.name ? <div>{errors.name}</div> : null}
-            <label>Email:</label>
+            <label>
+              Username:{" "}
+              {errors.username && touched.username ? (
+                <sub style={{ color: "red" }}>{errors.username}</sub>
+              ) : null}
+            </label>
+            <Field
+              type="text"
+              placeholder="Username"
+              name="username"
+              autoComplete="off"
+            />
+            <label>
+              Email:{" "}
+              {errors.email && touched.email ? (
+                <sub style={{ color: "red" }}>{errors.email}</sub>
+              ) : null}
+            </label>
             <Field
               type="text"
               placeholder="Email Id"
               name="email"
               autoComplete="off"
             />
-            {errors.email && touched.email ? <div>{errors.email}</div> : null}
-            <label>Mobile No.:</label>
+            <label>
+              Mobile No.:{" "}
+              {errors.mobile && touched.mobile ? (
+                <sub style={{ color: "red" }}>{errors.mobile}</sub>
+              ) : null}
+            </label>
             <Field
               type="text"
               placeholder="Mobile Number"
               name="mobile"
               autoComplete="off"
             />
-            {errors.mobile && touched.mobile ? (
-              <div>{errors.mobile}</div>
-            ) : null}
+            <label>
+              Password:{" "}
+              {errors.password && touched.password ? (
+                <sub style={{ color: "red" }}>{errors.password}</sub>
+              ) : null}
+            </label>
+            <Field
+              type="text"
+              placeholder="Password"
+              name="password"
+              autoComplete="off"
+            />
             <label>Gender:</label>
             <Field as="select" name="gender">
               <option value="Male">Male</option>

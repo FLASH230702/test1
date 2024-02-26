@@ -19,8 +19,8 @@ const ProfileDetails = () => {
   SignupSchema.isValid(dataToValidate);
 
   const handleSubmit = (values) => {
-    fetch("http://localhost:8000/profiles", {
-      method: "POST",
+    fetch("http://localhost:8000/profiles/" + id, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
     }).then(() => {
@@ -36,8 +36,6 @@ const ProfileDetails = () => {
   };
   const handleEdit = () => {
     setEdit(!edit);
-    if (edit === !false) {
-    }
   };
 
   return (
@@ -49,6 +47,8 @@ const ProfileDetails = () => {
           <p>{profiles?.email}</p>
           <h4>Mobile Number: </h4>
           <p>{profiles?.mobile}</p>
+          <h4>Password: </h4>
+          <p>{profiles?.password}</p>
           <h3>Gender:</h3>
           <p>{profiles?.gender}</p>
           <button onClick={handleClick}>Delete</button>
@@ -62,6 +62,7 @@ const ProfileDetails = () => {
             name: "",
             email: "",
             mobile: "",
+            password: "",
             gender: "Male",
           }}
           validationSchema={SignupSchema}
@@ -95,21 +96,23 @@ const ProfileDetails = () => {
               {errors.mobile && touched.mobile ? (
                 <div>{errors.mobile}</div>
               ) : null}
+              <label>Password: </label>
+              <Field
+                type="text"
+                placeholder="Password"
+                name="password"
+                autoComplete="off"
+              />
+              {errors.password && touched.password ? (
+                <div style={{ color: "red" }}>{errors.password}</div>
+              ) : null}
               <label>Gender:</label>
               <Field as="select" name="gender">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </Field>
               {!edit && <button type="submit">Done</button>}
-              {!edit && (
-                <button
-                  onClick={() => {
-                    setEdit(true);
-                  }}
-                >
-                  Cancel
-                </button>
-              )}
+              {!edit && <button onClick={handleEdit}>Cancel</button>}
             </Form>
           )}
         </Formik>
