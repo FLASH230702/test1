@@ -1,79 +1,109 @@
-import { useState } from "react";
-import moment from "moment";
+import React, { useState } from 'react';
+import './index.css';
+import moment from 'moment';
 
+const App = () => {
+  const time = moment().format('HH:MM')
+  const [display, setDisplay] = useState('0');
+  const [currentValue, setCurrentValue] = useState('');
+  const [previousValue, setPreviousValue] = useState('');
+  const [operator, setOperator] = useState('');
+  const [clearLabel, setClearLabel] = useState('AC');
 
-function App() {
-  const time = moment().format('HH:MM');
-  const [displayValue, setDisplayValue] = useState("0");
-  const [clearLabel, setClearLabel] = useState("AC");
-
-
-  const handleNum = (num) => {
-    if (displayValue === "0" || clearLabel === "AC") {
-      setClearLabel("C");
-    }
-
-    if (displayValue === "0") {
-      setDisplayValue(num.toString());
+  const handleNumberClick = (num) => {
+    if (display === '0' || currentValue === '') {
+      setDisplay(num);
     } else {
-      setDisplayValue(displayValue + num);
+      setDisplay(display + num);
     }
+    setCurrentValue(currentValue + num);
+    setClearLabel('C');
   };
 
-  const reset = () => {
-    if (clearLabel === "C") {
-      setDisplayValue("0");
-      setClearLabel("AC");
+  const handleOperatorClick = (op) => {
+    if (operator !== '') {
+      evaluateExpression();
     }
-    setDisplayValue("0");
+    setOperator(op);
+    setPreviousValue(display);
+    setCurrentValue('');
+    setClearLabel('AC');
   };
 
-  const handleOper = ((e) => {
+  const evaluateExpression = () => {
+    const prev = parseFloat(previousValue);
+    const current = parseFloat(currentValue);
+    let result;
+    switch (operator) {
+      case '+':
+        result = prev + current;
+        break;
+      case '-':
+        result = prev - current;
+        break;
+      case 'x':
+        result = prev * current;
+        break;
+      case '÷':
+        result = prev / current;
+        break;
+      case '%':
+        result = prev % current;
+        break;
+      case '^':
+        result = prev * -1;
+        break;
+      default:
+        return;
+    }
+    setDisplay(result.toString());
+    setPreviousValue(result.toString());
+  };
 
-  });
+  const handleEqualClick = () => {
+    evaluateExpression();
+    setCurrentValue('');
+    setOperator('');
+    setClearLabel('AC');
+  };
 
+  const handleClearClick = () => {
+    setDisplay('0');
+    setCurrentValue('');
+    setPreviousValue('');
+    setOperator('');
+    setClearLabel('AC');
+  };
 
   return (
     <div className="app">
       <div className="display">
-        <p>{ time }</p>
-        <h3>{ displayValue }</h3>
+        <p>{time}</p>
+        <h3>{display}</h3>
       </div>
       <div className="buttons">
-        <table>
-          <tr>
-            <td><input onClick={reset} className="gray" type="button" value={clearLabel} /></td>
-            <td><input onClick={() => handleOper('q')} className="gray" type="button" value="+/-" /></td>
-            <td><input onClick={() => handleOper('%')} className="gray" type="button" value="%" /></td>
-            <td><input onClick={() => handleOper('/')} className="orange" type="button" value="÷" /></td>
-          </tr>
-          <tr>
-            <td><input onClick={() => handleNum(7)} className="dark-gray" type="button" value="7" /></td>
-            <td><input onClick={() => handleNum(8)} className="dark-gray" type="button" value="8" /></td>
-            <td><input onClick={() => handleNum(9)} className="dark-gray" type="button" value="9" /></td>
-            <td><input onClick={() => handleOper('*')} className="orange" type="button" value="X" /></td>
-          </tr>
-          <tr>
-            <td><input onClick={() => handleNum(4)} className="dark-gray" type="button" value="4" /></td>
-            <td><input onClick={() => handleNum(5)} className="dark-gray" type="button" value="5" /></td>
-            <td><input onClick={() => handleNum(6)} className="dark-gray" type="button" value="6" /></td>
-            <td><input onClick={() => handleOper('-')} className="orange" type="button" value="-" /></td>
-          </tr>
-          <tr>
-            <td><input onClick={() => handleNum(1)} className="dark-gray" type="button" value="1" /></td>
-            <td><input onClick={() => handleNum(2)} className="dark-gray" type="button" value="2" /></td>
-            <td><input onClick={() => handleNum(3)} className="dark-gray" type="button" value="3" /></td>
-            <td><input onClick={() => handleOper('+')} className="orange" type="button" value="+" /></td>
-          </tr>
-          <tr>
-            <td colSpan="2"><input onClick={() => handleNum(0)} className="dark-gray yo" type="button" value="0" /></td>
-            <td><input className="dark-gray" type="button" value="." /></td>
-            <td><input className="orange" type="button" value="+" /></td>
-          </tr>
-        </table>
+        <button className='gray' onClick={() => handleClearClick()}>{clearLabel}</button>
+        <button className='gray'onClick={() => handleOperatorClick('^')}>+/-</button>
+        <button className='gray' onClick={() => handleOperatorClick('%')}>%</button>
+        <button className="orange" onClick={() => handleOperatorClick('÷')}>÷</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('7')}>7</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('8')}>8</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('9')}>9</button>
+        <button className="orange" onClick={() => handleOperatorClick('x')}>x</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('4')}>4</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('5')}>5</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('6')}>6</button>
+        <button className="orange" onClick={() => handleOperatorClick('-')}>-</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('1')}>1</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('2')}>2</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('3')}>3</button>
+        <button className="orange" onClick={() => handleOperatorClick('+')}>+</button>
+        <button className="dark-gray yo" onClick={() => handleNumberClick('0')}>0</button>
+        <button className="dark-gray" onClick={() => handleNumberClick('.')}>.</button>
+        <button className="orange" onClick={() => handleEqualClick()}>=</button>
       </div>
     </div>
   );
-}
+};
 
 export default App;
