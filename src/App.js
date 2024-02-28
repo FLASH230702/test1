@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import Shop from "./Shop";
 import Signin from "./Signin";
+import Signup from "./Signup";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route exact path="/signin">
               <Signin />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
             </Route>
           </Switch>
         </div>
