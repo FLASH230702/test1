@@ -8,6 +8,8 @@ import Home from "./Home";
 import Shop from "./Shop";
 import Signin from "./Signin";
 import Signup from "./Signup";
+import Profile from "./Profile";
+import ProfileList from "./ProfileList";
 
 function App() {
   return (
@@ -27,6 +29,12 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/profile/:id">
+              <Profile />
+            </Route>
+            <Route exact path="/profilelist">
+              <ProfileList />
             </Route>
           </Switch>
         </div>

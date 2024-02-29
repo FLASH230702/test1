@@ -4,8 +4,13 @@ import search from "./img/icons/search.png";
 import heart from "./img/icons/heart.png";
 import bag from "./img/icons/cart.png";
 import "boxicons";
+import { useSelector } from "react-redux";
+import useFetch from "./useFetch";
 
 const Navbar = () => {
+  const { sign } = useSelector((state) => state.counter);
+  const { id } = useSelector((state) => state.counter);
+  console.log(sign);
   return (
     <header className="header">
       <div className="header__top">
@@ -19,7 +24,9 @@ const Navbar = () => {
             <div className="col-lg-6 col-md-5">
               <div className="header__top__right">
                 <div className="header__top__links">
-                  <Link to="/signin">Sign in</Link>
+                  {sign && <Link to="/signin">Sign in</Link>}
+                  {!sign && <Link to={`/profile/${id}`}>Profile</Link>}
+                  {id === "0" && <Link to="/profilelist">Profile List</Link>}
                   <Link to="/faq">FAQs</Link>
                 </div>
               </div>

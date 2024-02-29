@@ -59,6 +59,7 @@ main,
 nav,
 section {
   display: block;
+  margin-bottom: 30px;
 }
 body {
   margin: 0;

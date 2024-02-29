@@ -1,30 +1,39 @@
 import React from "react";
 import "boxicons";
 import { Field, Form, Formik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { Signin, change } from "./redux/counter";
 import * as Yup from "yup";
 import useFetch from "./useFetch";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   var errormsgs = "";
   const history = useHistory();
-  const { data: profiles } = useFetch("http://localhost:8000/profiles/");
+  const { data: profiles } = useFetch("http://localhost:8000/profiles");
 
   const handleSubmit = (values) => {
-    profiles.map((profile) => {
+    let found = false;
+
+    profiles.forEach((profile) => {
       if (
         values.username === profile.username &&
         values.password === profile.password
       ) {
-        history.push("/profiles/" + profile.id);
-      } else if (
-        values.username === "admin" &&
-        values.password === "admin123"
-      ) {
-        history.push("/home");
+        found = true;
+        history.push(`/profile/${profile.id}`);
+        dispatch(change(profile.id));
       }
-      return (errormsgs = "The entered Username or password is incorrect");
     });
+
+    if (!found) {
+      if (values.username === "admin" && values.password === "admin123") {
+        history.push("/profilelist");
+      } else {
+        console.error("The entered Username or password is incorrect");
+      }
+    }
   };
 
   const SignInSchema = Yup.object().shape({
@@ -60,9 +69,11 @@ const SignIn = () => {
             </label>
             <Field type="password" name="password" autocomplete="off" />
 
-            <button type="submit">Sign In</button>
+            <button type="submit" onClick={() => dispatch(Signin())}>
+              Sign In
+            </button>
             <p style={{ marginTop: "20px" }}>
-              Not a Member?<a href="/signup"> Sign Up</a>
+              Not a Member?<Link to="/signup"> Sign Up</Link>
             </p>
 
             <h4>{errormsgs}</h4>
