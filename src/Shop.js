@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import ProductMain from "./ProductMain";
+import { useState } from "react";
 
 const Shop = () => {
+  const [isOpen1, setIsOpen1] = useState(true);
+  const [isOpen2, setIsOpen2] = useState(true);
+  const [isOpen3, setIsOpen3] = useState(true);
+  const [isOpen4, setIsOpen4] = useState(true);
+  const toggleMenu1 = () => {
+    setIsOpen1(!isOpen1);
+  };
+  const toggleMenu2 = () => {
+    setIsOpen2(!isOpen2);
+  };
+  const toggleMenu3 = () => {
+    setIsOpen3(!isOpen3);
+  };
+  const toggleMenu4 = () => {
+    setIsOpen4(!isOpen4);
+  };
   return (
     <section className="shop spad">
       <div className="container">
@@ -20,38 +37,34 @@ const Shop = () => {
                 <div className="accordion" id="accordionExample">
                   <div className="card">
                     <div className="card-heading">
-                      <Link data-toggle="collapse" data-target="#collapseOne">
+                      <button className="btn btn-link" onClick={toggleMenu1}>
                         Categories
-                      </Link>
+                      </button>
                     </div>
-                    <div
-                      id="collapseOne"
-                      className="collapse show"
-                      data-parent="#accordionExample"
-                    >
+                    <div className={`collapse ${isOpen1 ? "show" : ""}`}>
                       <div className="card-body">
                         <div className="shop__sidebar__categories">
                           <ul className="nice-scroll">
                             <li>
-                              <Link to="/">Men (20)</Link>
+                              <a href="/">Men (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Women (20)</Link>
+                              <a href="/">Women (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Bags (20)</Link>
+                              <a href="/">Bags (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Clothing (20)</Link>
+                              <a href="/">Clothing (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Shoes (20)</Link>
+                              <a href="/">Shoes (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Accessories (20)</Link>
+                              <a href="/">Accessories (20)</a>
                             </li>
                             <li>
-                              <Link to="/">Kids (20)</Link>
+                              <a href="/">Kids (20)</a>
                             </li>
                           </ul>
                         </div>
@@ -60,29 +73,55 @@ const Shop = () => {
                   </div>
                   <div className="card">
                     <div className="card-heading">
-                      <Link data-toggle="collapse" data-target="/collapseTwo">
+                      <button className="btn btn-link" onClick={toggleMenu2}>
                         Branding
-                      </Link>
+                      </button>
                     </div>
-                    <div
-                      id="collapseTwo"
-                      className="collapse show"
-                      data-parent="/accordionExample"
-                    >
+                    <div className={`collapse ${isOpen2 ? "show" : ""}`}>
                       <div className="card-body">
                         <div className="shop__sidebar__brand">
-                          <ul>
+                          <ul className="nice-scroll">
                             <li>
-                              <Link to="/">Louis Vuitton</Link>
+                              <a href="/">Louis Vuitton</a>
                             </li>
                             <li>
-                              <Link to="/">Chanel</Link>
+                              <a href="/">Chanel</a>
                             </li>
                             <li>
-                              <Link to="/">Hermes</Link>
+                              <a href="/">Hermes</a>
                             </li>
                             <li>
-                              <Link to="/">Gucci</Link>
+                              <a href="/">Gucci</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card">
+                    <div className="card-heading">
+                      <button className="btn btn-link" onClick={toggleMenu2}>
+                        Filter Price
+                      </button>
+                    </div>
+                    <div className={`collapse ${isOpen2 ? "show" : ""}`}>
+                      <div className="card-body">
+                        <div className="shop__sidebar__categories">
+                          <ul className="nice-scroll">
+                            <li>
+                              <a href="/">$0.00 - $50.00</a>
+                            </li>
+                            <li>
+                              <a href="/">$50.00 - $100.00</a>
+                            </li>
+                            <li>
+                              <a href="/">$100.00 - $150.00</a>
+                            </li>
+                            <li>
+                              <a href="/">$150.00 - $200.00</a>
+                            </li>
+                            <li>
+                              <a href="/">250.00+</a>
                             </li>
                           </ul>
                         </div>

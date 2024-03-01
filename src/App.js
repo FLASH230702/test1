@@ -10,6 +10,8 @@ import Signin from "./Signin";
 import Signup from "./Signup";
 import Profile from "./Profile";
 import ProfileList from "./ProfileList";
+import ShopDetails from "./ShopDetails";
+import Cart from "./Cart";
 
 function App() {
   return (
@@ -18,10 +20,10 @@ function App() {
         <Navbar />
         <div className="content">
           <Switch>
-            <Route path="/home">
+            <Route exact path="/home">
               <Home />
             </Route>
-            <Route path="/Shop">
+            <Route exact path="/shop">
               <Shop />
             </Route>
             <Route exact path="/signin">
@@ -35,6 +37,12 @@ function App() {
             </Route>
             <Route exact path="/profilelist">
               <ProfileList />
+            </Route>
+            <Route exact path="/shop/:id">
+              <ShopDetails />
+            </Route>
+            <Route exact path="/cart">
+              <Cart />
             </Route>
           </Switch>
         </div>

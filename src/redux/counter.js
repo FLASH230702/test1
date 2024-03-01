@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
   initialState: {
     sign: true,
     id: 100,
+    prod: 0,
   },
   reducers: {
     Signin: (state) => {
@@ -16,9 +17,12 @@ export const counterSlice = createSlice({
     change: (state, action) => {
       state.id = action.payload;
     },
+    prodchange: (state, action) => {
+      state.prod = action.payload;
+    },
   },
 });
 
-export const { Signin, Signout, change } = counterSlice.actions;
+export const { Signin, Signout, change, prodchange } = counterSlice.actions;
 
 export default counterSlice.reducer;

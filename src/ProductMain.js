@@ -10,30 +10,32 @@ const ProductMain = () => {
       {shops
         ? shops.map((shop) => (
             <div class="col-lg-4 col-md-6 col-sm-6">
-              <div class="product__item">
-                <div
-                  class="product__item__pic set-bg"
-                  style={{ backgroundImage: `url(${shop.image})` }}
-                  key={shop.id}
-                >
-                  <ul class="product__hover">
-                    <li>
-                      <Link to="/">
-                        <img src={heart} alt="Heart" />
-                        <span>Like</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/">
-                        <img src={compare} alt="Compare" />
-                        <span>Compare</span>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div class="product__item__text">
+              <div class="product__item" key={shop.id}>
+                <Link to={`/shop/${shop.id}`}>
+                  <div
+                    class="product__item__pic set-bg"
+                    style={{ backgroundImage: `url(${shop.image})` }}
+                    key={shop.id}
+                  >
+                    <ul class="product__hover">
+                      <li>
+                        <Link to="/">
+                          <img src={heart} alt="Heart" />
+                          <span>Like</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/">
+                          <img src={compare} alt="Compare" />
+                          <span>Compare</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </Link>
+                <div class="product__item__text" key={shop.id}>
                   <h6>{shop.name}</h6>
-                  <Link to="/" class="add-cart">
+                  <Link to={`/shop/${shop.id}`} class="add-cart">
                     + Add To Cart
                   </Link>
                   <div class="rating">

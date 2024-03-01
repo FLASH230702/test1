@@ -5,12 +5,42 @@ import heart from "./img/icons/heart.png";
 import bag from "./img/icons/cart.png";
 import "boxicons";
 import { useSelector } from "react-redux";
-import useFetch from "./useFetch";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [select1, setSelect1] = useState("");
+  const [select2, setSelect2] = useState("");
+  const [select3, setSelect3] = useState("");
+  const [select4, setSelect4] = useState("");
   const { sign } = useSelector((state) => state.counter);
   const { id } = useSelector((state) => state.counter);
   console.log(sign);
+
+  const handleClick1 = () => {
+    setSelect1("active");
+    setSelect2(null);
+    setSelect3(null);
+    setSelect4(null);
+  };
+  const handleClick2 = () => {
+    setSelect1(null);
+    setSelect2("active");
+    setSelect3(null);
+    setSelect4(null);
+  };
+  const handleClick3 = () => {
+    setSelect1(null);
+    setSelect2(null);
+    setSelect3("active");
+    setSelect4(null);
+  };
+  const handleClick4 = () => {
+    setSelect1(null);
+    setSelect2(null);
+    setSelect3(null);
+    setSelect4("active");
+  };
+
   return (
     <header className="header">
       <div className="header__top">
@@ -46,16 +76,16 @@ const Navbar = () => {
           <div className="col-lg-6 col-md-6">
             <nav className="header__menu mobile-menu">
               <ul>
-                <li className="active">
+                <li className={select1} onClick={handleClick1}>
                   <Link to="/home">Home</Link>
                 </li>
-                <li>
+                <li className={select2} onClick={handleClick2}>
                   <Link to="/shop">Shop</Link>
                 </li>
-                <li>
+                <li className={select3} onClick={handleClick3}>
                   <Link to="/blogs">Blog</Link>
                 </li>
-                <li>
+                <li className={select4} onClick={handleClick4}>
                   <Link to="/contact">Contacts</Link>
                 </li>
               </ul>
@@ -69,7 +99,7 @@ const Navbar = () => {
               <Link to="/">
                 <img src={heart} alt="Like" />
               </Link>
-              <Link to="/">
+              <Link to="/cart">
                 <img src={bag} alt="Cart" />
               </Link>
             </div>
