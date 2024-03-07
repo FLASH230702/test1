@@ -5,6 +5,7 @@ import {
 } from "react-router-dom/cjs/react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
+import ScrollToTopOnRedirect from "./ScrollToTopOnRedirect";
 import Shop from "./Shop";
 import Signin from "./Signin";
 import Signup from "./Signup";
@@ -12,10 +13,14 @@ import Profile from "./Profile";
 import ProfileList from "./ProfileList";
 import ShopDetails from "./ShopDetails";
 import Cart from "./Cart";
+import Blogs from "./Blogs";
+import BlogDetails from "./BlogDetails";
+import Contact from "./Contact";
 
 function App() {
   return (
     <Router>
+      <ScrollToTopOnRedirect />
       <div className="app">
         <Navbar />
         <div className="content">
@@ -43,6 +48,15 @@ function App() {
             </Route>
             <Route exact path="/cart">
               <Cart />
+            </Route>
+            <Route exact path="/blogs">
+              <Blogs />
+            </Route>
+            <Route exact path="/blogs/:id">
+              <BlogDetails />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
           </Switch>
         </div>

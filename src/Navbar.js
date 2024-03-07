@@ -14,7 +14,6 @@ const Navbar = () => {
   const [select4, setSelect4] = useState("");
   const { sign } = useSelector((state) => state.counter);
   const { id } = useSelector((state) => state.counter);
-  console.log(sign);
 
   const handleClick1 = () => {
     setSelect1("active");

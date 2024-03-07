@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { getDatabase, ref, set } from "firebase/database";
+import { app } from "./firebase";
+
+const db = getDatabase(app);
 
 const phoneRegex = "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$";
 const emailRegex =
@@ -27,17 +31,15 @@ export const SignupSchema = Yup.object().shape({
 });
 
 const Signup = (props) => {
-  const history = useHistory();
-  const [done, setDone] = useState(true);
-  const handleSubmit = (values) => {
-    fetch("http://localhost:8000/profiles", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    }).then(() => {
-      history.push("/profiles");
+  const putData = () => {
+    set(ref(db, "profiles/5"), {
+      name: "Tanishq",
+      age: 21,
     });
   };
+  const history = useHistory();
+  const [done, setDone] = useState(true);
+  const handleSubmit = (values) => {};
   const handleNext = () => {
     setDone(false);
   };

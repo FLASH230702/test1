@@ -6,7 +6,6 @@ import compare from "./img/icons/compare.png";
 
 const Products = () => {
   const { data: products } = useFetch("http://localhost:8000/products");
-
   return (
     <section className="product spad">
       <div className="container">

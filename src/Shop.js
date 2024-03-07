@@ -7,6 +7,9 @@ const Shop = () => {
   const [isOpen2, setIsOpen2] = useState(true);
   const [isOpen3, setIsOpen3] = useState(true);
   const [isOpen4, setIsOpen4] = useState(true);
+  const [isOpen5, setIsOpen5] = useState(true);
+  const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
   const toggleMenu1 = () => {
     setIsOpen1(!isOpen1);
   };
@@ -18,6 +21,16 @@ const Shop = () => {
   };
   const toggleMenu4 = () => {
     setIsOpen4(!isOpen4);
+  };
+  const toggleMenu5 = () => {
+    setIsOpen5(!isOpen5);
+  };
+
+  const handleSizeChange = (event) => {
+    setSelectedSize(event.target.value);
+  };
+  const handleColorChange = (event) => {
+    setSelectedColor(event.target.value);
   };
   return (
     <section className="shop spad">
@@ -100,13 +113,13 @@ const Shop = () => {
                   </div>
                   <div className="card">
                     <div className="card-heading">
-                      <button className="btn btn-link" onClick={toggleMenu2}>
+                      <button className="btn btn-link" onClick={toggleMenu3}>
                         Filter Price
                       </button>
                     </div>
-                    <div className={`collapse ${isOpen2 ? "show" : ""}`}>
+                    <div className={`collapse ${isOpen3 ? "show" : ""}`}>
                       <div className="card-body">
-                        <div className="shop__sidebar__categories">
+                        <div className="shop__sidebar__price">
                           <ul className="nice-scroll">
                             <li>
                               <a href="/">$0.00 - $50.00</a>
@@ -130,85 +143,96 @@ const Shop = () => {
                   </div>
                   <div className="card">
                     <div className="card-heading">
-                      <Link data-toggle="collapse" data-target="/collapseThree">
-                        Filter Price
-                      </Link>
-                    </div>
-                    <div
-                      id="collapseThree"
-                      className="collapse show"
-                      data-parent="/accordionExample"
-                    >
-                      <div className="card-body">
-                        <div className="shop__sidebar__price">
-                          <ul>
-                            <li>
-                              <Link to="/">$0.00 - $50.00</Link>
-                            </li>
-                            <li>
-                              <Link to="/">$50.00 - $100.00</Link>
-                            </li>
-                            <li>
-                              <Link to="/">$100.00 - $150.00</Link>
-                            </li>
-                            <li>
-                              <Link to="/">$150.00 - $200.00</Link>
-                            </li>
-                            <li>
-                              <Link to="/">$200.00 - $250.00</Link>
-                            </li>
-                            <li>
-                              <Link to="/">250.00+</Link>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="card">
-                    <div className="card-heading">
-                      <Link data-toggle="collapse" data-target="/collapseFour">
+                      <button className="btn btn-link" onClick={toggleMenu4}>
                         Size
-                      </Link>
+                      </button>
                     </div>
-                    <div
-                      id="collapseFour"
-                      className="collapse show"
-                      data-parent="/accordionExample"
-                    >
+                    <div className={`collapse ${isOpen4 ? "show" : ""}`}>
                       <div className="card-body">
                         <div className="shop__sidebar__size">
-                          <label for="xs">
+                          <label
+                            htmlFor="xs"
+                            className={selectedSize === "xs" ? "selected" : ""}
+                          >
                             xs
-                            <input type="radio" id="xs" />
+                            <input
+                              type="radio"
+                              id="xs"
+                              name="size"
+                              value="xs"
+                              checked={selectedSize === "xs"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
-                          <label for="sm">
+                          <label
+                            htmlFor="sm"
+                            className={selectedSize === "sm" ? "selected" : ""}
+                          >
                             s
-                            <input type="radio" id="sm" />
+                            <input
+                              type="radio"
+                              id="sm"
+                              name="size"
+                              value="sm"
+                              checked={selectedSize === "sm"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
-                          <label for="md">
+                          <label
+                            htmlFor="md"
+                            className={selectedSize === "md" ? "selected" : ""}
+                          >
                             m
-                            <input type="radio" id="md" />
+                            <input
+                              type="radio"
+                              id="md"
+                              name="size"
+                              value="md"
+                              checked={selectedSize === "md"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
-                          <label for="xl">
+                          <label
+                            htmlFor="xl"
+                            className={selectedSize === "xl" ? "selected" : ""}
+                          >
                             xl
-                            <input type="radio" id="xl" />
+                            <input
+                              type="radio"
+                              id="xl"
+                              name="size"
+                              value="xl"
+                              checked={selectedSize === "xl"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
-                          <label for="2xl">
+                          <label
+                            htmlFor="2xl"
+                            className={selectedSize === "2xl" ? "selected" : ""}
+                          >
                             2xl
-                            <input type="radio" id="2xl" />
+                            <input
+                              type="radio"
+                              id="2xl"
+                              name="size"
+                              value="2xl"
+                              checked={selectedSize === "2xl"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
-                          <label for="xxl">
-                            xxl
-                            <input type="radio" id="xxl" />
-                          </label>
-                          <label for="3xl">
+                          <label
+                            htmlFor="3xl"
+                            className={selectedSize === "3xl" ? "selected" : ""}
+                          >
                             3xl
-                            <input type="radio" id="3xl" />
-                          </label>
-                          <label for="4xl">
-                            4xl
-                            <input type="radio" id="4xl" />
+                            <input
+                              type="radio"
+                              id="3xl"
+                              name="size"
+                              value="3xl"
+                              checked={selectedSize === "3xl"}
+                              onChange={handleSizeChange}
+                            />
                           </label>
                         </div>
                       </div>
@@ -216,43 +240,124 @@ const Shop = () => {
                   </div>
                   <div className="card">
                     <div className="card-heading">
-                      <Link data-toggle="collapse" data-target="/collapseFive">
-                        Colors
-                      </Link>
+                      <button className="btn btn-link" onClick={toggleMenu5}>
+                        Colours
+                      </button>
                     </div>
-                    <div
-                      id="collapseFive"
-                      className="collapse show"
-                      data-parent="/accordionExample"
-                    >
+                    <div className={`collapse ${isOpen5 ? "show" : ""}`}>
                       <div className="card-body">
                         <div className="shop__sidebar__color">
-                          <label className="c-1" for="sp-1">
-                            <input type="radio" id="sp-1" />
+                          <label
+                            htmlFor="black"
+                            className={
+                              selectedColor === "black" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "black" }}
+                          >
+                            <input
+                              type="radio"
+                              id="black"
+                              name="color"
+                              value="black"
+                              checked={selectedColor === "#0b090c"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-2" for="sp-2">
-                            <input type="radio" id="sp-2" />
+                          <label
+                            htmlFor="red"
+                            className={
+                              selectedColor === "red" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#20315f" }}
+                          >
+                            <input
+                              type="radio"
+                              id="red"
+                              name="color"
+                              value="red"
+                              checked={selectedColor === "red"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-3" for="sp-3">
-                            <input type="radio" id="sp-3" />
+                          <label
+                            htmlFor="green"
+                            className={
+                              selectedColor === "green" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#f1af4d" }}
+                          >
+                            <input
+                              type="radio"
+                              id="green"
+                              name="color"
+                              value="green"
+                              checked={selectedColor === "green"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-4" for="sp-4">
-                            <input type="radio" id="sp-4" />
+                          <label
+                            htmlFor="blue"
+                            className={
+                              selectedColor === "blue" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#636068" }}
+                          >
+                            <input
+                              type="radio"
+                              id="blue"
+                              name="color"
+                              value="blue"
+                              checked={selectedColor === "blue"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-5" for="sp-5">
-                            <input type="radio" id="sp-5" />
+                          <label
+                            htmlFor="orange"
+                            className={
+                              selectedColor === "orange" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#57594d" }}
+                          >
+                            <input
+                              type="radio"
+                              id="orange"
+                              name="color"
+                              value="orange"
+                              checked={selectedColor === "orange"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-6" for="sp-6">
-                            <input type="radio" id="sp-6" />
+                          <label
+                            htmlFor="magenta"
+                            className={
+                              selectedColor === "magenta" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#e8bac4" }}
+                          >
+                            <input
+                              type="radio"
+                              id="magenta"
+                              name="color"
+                              value="magenta"
+                              checked={selectedColor === "magenta"}
+                              onChange={handleColorChange}
+                            />
                           </label>
-                          <label className="c-7" for="sp-7">
-                            <input type="radio" id="sp-7" />
-                          </label>
-                          <label className="c-8" for="sp-8">
-                            <input type="radio" id="sp-8" />
-                          </label>
-                          <label className="c-9" for="sp-9">
-                            <input type="radio" id="sp-9" />
+                          <label
+                            htmlFor="gold"
+                            className={
+                              selectedColor === "gold" ? "selected" : ""
+                            }
+                            style={{ backgroundColor: "#d6c1d7" }}
+                          >
+                            <input
+                              type="radio"
+                              id="gold"
+                              name="color"
+                              value="gold"
+                              checked={selectedColor === "gold"}
+                              onChange={handleColorChange}
+                            />
                           </label>
                         </div>
                       </div>
@@ -267,7 +372,7 @@ const Shop = () => {
               <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-6">
                   <div className="shop__product__option__left">
-                    <p>Showing 1–12 of 126 results</p>
+                    <p>Showing 1-12 of 126 results</p>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6">
@@ -275,8 +380,8 @@ const Shop = () => {
                     <p>Sort by Price:</p>
                     <select>
                       <option value="">Low To High</option>
-                      <option value="">$0 - $55</option>
-                      <option value="">$55 - $100</option>
+                      <option value="">Popularity</option>
+                      <option value="">New Arrivals</option>
                     </select>
                   </div>
                 </div>
@@ -289,10 +394,10 @@ const Shop = () => {
                   <Link className="active" to="/shop">
                     1
                   </Link>
-                  <Link to="/shop/2">2</Link>
-                  <Link to="/">3</Link>
+                  <Link to="/shop">2</Link>
+                  <Link to="/shop">3</Link>
                   <span>...</span>
-                  <Link to="/">21</Link>
+                  <Link to="/shop">21</Link>
                 </div>
               </div>
             </div>

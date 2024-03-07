@@ -17,12 +17,16 @@ export const counterSlice = createSlice({
     change: (state, action) => {
       state.id = action.payload;
     },
-    prodchange: (state, action) => {
-      state.prod = action.payload;
+    prodchangeup: (state) => {
+      state.prod += 1;
+    },
+    prodchangedown: (state) => {
+      state.prod -= 1;
     },
   },
 });
 
-export const { Signin, Signout, change, prodchange } = counterSlice.actions;
+export const { Signin, Signout, change, prodchangeup, prodchangedown } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

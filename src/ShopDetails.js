@@ -1,14 +1,18 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { prodchangeup, prodchangedown } from "./redux/counter";
 import useFetch from "./useFetch";
 import payment from "./img/details-payment.png";
 import heart from "./img/icons/heart.png";
 import compare from "./img/icons/compare.png";
+import { useDispatch, useSelector } from "react-redux";
 
 const ShopDetails = () => {
+  const dispatch = useDispatch();
+  const prod = useSelector((state) => state.counter.prod);
   const { id } = useParams();
   const { data: shops } = useFetch("http://localhost:8000/shops/" + id);
-
+  console.log(shops?.quan);
   return (
     <section className="shop-details">
       <div className="product__details__pic">
@@ -98,7 +102,17 @@ const ShopDetails = () => {
                 <div className="product__details__cart__option">
                   <div className="quantity">
                     <div className="pro-qty">
-                      <input type="text" value="1" />
+                      {prod > 0 && (
+                        <span onClick={() => dispatch(prodchangedown())}>
+                          <strong>-</strong>
+                        </span>
+                      )}
+                      <input type="text" value={prod} />
+                      {prod <= shops?.quan && (
+                        <span onClick={() => dispatch(prodchangeup())}>
+                          <strong>+</strong>
+                        </span>
+                      )}
                     </div>
                   </div>
                   <button to="" className="primary-btn">
@@ -120,7 +134,7 @@ const ShopDetails = () => {
                   <img src={payment} alt="Payment" />
                   <ul>
                     <li>
-                      <span>SKU:</span> {shops?.prod}
+                      <span>Product ID:</span> {shops?.prod}
                     </li>
                     <li>
                       <span>Categories:</span> Clothes
