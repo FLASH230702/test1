@@ -16,6 +16,7 @@ import Cart from "./Cart";
 import Blogs from "./Blogs";
 import BlogDetails from "./BlogDetails";
 import Contact from "./Contact";
+import Test from "./Test";
 
 function App() {
   return (
@@ -57,6 +58,9 @@ function App() {
             </Route>
             <Route exact path="/contact">
               <Contact />
+            </Route>
+            <Route exact path="/test">
+              <Test />
             </Route>
           </Switch>
         </div>

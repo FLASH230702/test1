@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBZfsc9wqdj-QDQZuNlMk_Covn5AoFXcVw",
@@ -11,4 +12,7 @@ const firebaseConfig = {
   databaseURL: "https://e-commerce-web-128d8-default-rtdb.firebaseio.com",
 };
 
+const firebaseApp = initializeApp(firebaseConfig);
+
 export const app = initializeApp(firebaseConfig);
+export default firebaseApp;

@@ -777,6 +777,7 @@ ol {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 200px;
 }
 .entry label {
   text-align: left;

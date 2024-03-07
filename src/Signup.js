@@ -31,22 +31,30 @@ export const SignupSchema = Yup.object().shape({
 });
 
 const Signup = (props) => {
-  const putData = () => {
-    set(ref(db, "profiles/5"), {
-      name: "Tanishq",
-      age: 21,
-    });
-  };
   const history = useHistory();
   const [done, setDone] = useState(true);
-  const handleSubmit = (values) => {};
+  const date = new Date();
+  const keyID = date.getTime() + Math.floor(Math.random() * 1000);
+  const handleSubmit = (values) => {
+    set(
+      ref(db, `profiles/${keyID}`),
+      {
+        email: values.email.toString(),
+        gender: values.gender.toString(),
+        id: keyID,
+        mobile: values.mobile.toString(),
+        name: values.name.toString(),
+        password: values.password.toString(),
+        username: values.username.toString(),
+      }.then(history.push("/home"))
+    );
+  };
   const handleNext = () => {
     setDone(false);
   };
   const handleBack = () => {
     setDone(true);
   };
-
   return (
     <div className="entry">
       <h1>Sign Up</h1>
