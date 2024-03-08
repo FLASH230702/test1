@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const Cart = () => {
+  const prodprice1 = 28.69;
+  const [numberofitems, setNumberOfItems] = useState(1);
   const [money, setMoney] = useState([
     {
       subtotal: "",
@@ -10,11 +12,31 @@ const Cart = () => {
     },
   ]);
   const handleCart = () => {
-    setMoney();
+    const newsubtotal = prodprice1 * numberofitems;
+    const newtax = 0.18 * newsubtotal;
+    const newtotal = newsubtotal + newtax;
+    const newCartItem = {
+      subtotal: newsubtotal.toFixed(2),
+      tax: newtax.toFixed(2),
+      total: newtotal.toFixed(2),
+    };
+    setMoney(newCartItem);
   };
-
+  const handleClickDown = () => {
+    if (numberofitems !== 1) {
+      setNumberOfItems(numberofitems - 1);
+    } else {
+      setNumberOfItems(numberofitems);
+    }
+  };
+  const handleClickUp = () => {
+    setNumberOfItems(numberofitems + 1);
+  };
+  const handleDelete = () => {
+    console.log("You Did it!!");
+  };
   return (
-    <div className="carrt">
+    <div className="cart">
       <section class="shopping-cart spad">
         <div class="container">
           <div class="row">
@@ -37,19 +59,28 @@ const Cart = () => {
                         </div>
                         <div class="product__cart__item__text">
                           <h6>T-shirt Contrast Pocket</h6>
-                          <h5>$98.49</h5>
+                          <h5>${prodprice1}</h5>
                         </div>
                       </td>
                       <td class="quantity__item">
                         <div class="quantity">
                           <div class="pro-qty-2">
-                            <input type="text" value="1" />
+                            <button className="qtybtn" onClick={handleClickUp}>
+                              +
+                            </button>
+                            <input type="text" value={numberofitems} />
+                            <button
+                              className="qtybtn"
+                              onClick={handleClickDown}
+                            >
+                              -
+                            </button>
                           </div>
                         </div>
                       </td>
-                      <td class="cart__price">$ 98.49</td>
-                      <td class="cart__close">
-                        <i class="fa fa-close"></i>
+                      <td class="cart__price">$ {prodprice1}</td>
+                      <td class="cart__close" onClick={handleDelete}>
+                        <box-icon type="solid" name="trash" />
                       </td>
                     </tr>
                   </tbody>
@@ -82,13 +113,13 @@ const Cart = () => {
                 <h6>Cart total</h6>
                 <ul>
                   <li>
-                    Subtotal <span>$ </span>
+                    Subtotal <span>${money.subtotal} </span>
                   </li>
                   <li>
-                    Taxes (18% GST) <span>$ </span>
+                    Taxes (18% GST) <span>${money.tax} </span>
                   </li>
                   <li>
-                    Total <span>$ </span>
+                    Total <span>${money.total} </span>
                   </li>
                 </ul>
                 <Link to="#" class="primary-btn">
