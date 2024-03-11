@@ -17,6 +17,7 @@ import Blogs from "./Blogs";
 import BlogDetails from "./BlogDetails";
 import Contact from "./Contact";
 import Test from "./Test";
+import Signout from "./Signout";
 
 function App() {
   return (
@@ -59,8 +60,11 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
-            <Route exact path="/test">
+            <Route exact path="/test/:id">
               <Test />
+            </Route>
+            <Route exact path="/signout">
+              <Signout />
             </Route>
           </Switch>
         </div>

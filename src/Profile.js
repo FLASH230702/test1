@@ -1,58 +1,90 @@
 import { useHistory } from "react-router-dom";
-import useFetch from "./useFetch";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { SignupSchema } from "./Signup";
+import React, { useState, useEffect } from "react";
+import { getDatabase, ref, onValue, set } from "firebase/database";
+import { app } from "./firebase";
+
+const db = getDatabase(app);
 
 const Profile = () => {
   const [edit, setEdit] = useState(true);
+  const [users, setUsers] = useState([]);
   const { id } = useParams();
-  const { data: profiles } = useFetch("http://localhost:8000/profiles/" + id);
   const history = useHistory();
-  const dataToValidate = {
-    name: profiles?.name,
-    email: profiles?.email,
-    mobile: profiles?.mobile,
-  };
 
-  SignupSchema.isValid(dataToValidate);
+  useEffect(() => {
+    const fetchData = async () => {
+      const dbRef = ref(getDatabase(), "profiles");
+
+      onValue(dbRef, (snapshot) => {
+        const profiles = snapshot.val();
+
+        if (profiles) {
+          const usersArray = Object.values(profiles).map((profile) => ({
+            id: profile.id,
+            username: profile.username,
+            password: profile.password,
+            name: profile.name,
+            mobile: profile.mobile,
+            gender: profile.gender,
+            email: profile.email,
+          }));
+          setUsers(usersArray);
+        }
+      });
+    };
+
+    fetchData();
+
+    return () => {};
+  }, []);
+  const filteredProductsArray = users.filter(
+    (profile) => profile.id === Number(id)
+  );
+
+  const data_names = filteredProductsArray.map((profile) => profile.name);
+  const data_email = filteredProductsArray.map((profile) => profile.email);
+  const data_mobile = filteredProductsArray.map((profile) => profile.mobile);
+  const data_username = filteredProductsArray.map(
+    (profile) => profile.username
+  );
+  const data_password = filteredProductsArray.map(
+    (profile) => profile.password
+  );
+  const data_gender = filteredProductsArray.map((profile) => profile.gender);
 
   const handleSubmit = (values) => {
-    fetch("http://localhost:8000/profiles/" + id, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    }).then(() => {
-      history.push("/profile");
+    set(ref(db, "profiles/" + id), {
+      email: values.email.toString(),
+      gender: values.gender.toString(),
+      mobile: values.mobile.toString(),
+      name: values.name.toString(),
+      password: values.password.toString(),
+      username: values.username.toString(),
     });
+    history.push("/home");
   };
-  const handleClick = () => {
-    fetch("http://localhost:8000/profiles/" + profiles.id, {
-      method: "DELETE",
-    }).then(() => {
-      history.push("/profile");
-    });
-  };
-  const handleEdit = () => {
-    setEdit(!edit);
-  };
+  const handleClick = () => {};
 
   return (
     <div className="profile-details">
       {edit && (
         <article>
-          <h2>{profiles?.name}</h2>
+          <h2>{data_names}</h2>
           <h4>Email: </h4>
-          <p>{profiles?.email}</p>
+          <p>{data_email}</p>
           <h4>Mobile Number: </h4>
-          <p>{profiles?.mobile}</p>
+          <p>{data_mobile}</p>
+          <h4>Username: </h4>
+          <p>{data_username}</p>
           <h4>Password: </h4>
-          <p>{profiles?.password}</p>
+          <p>{data_password}</p>
           <h3>Gender:</h3>
-          <p>{profiles?.gender}</p>
+          <p>{data_gender}</p>
           <button onClick={handleClick}>Delete</button>
-          <button onClick={handleEdit}>Edit</button>
+          <button onClick={() => setEdit(false)}>Edit</button>
         </article>
       )}
 
@@ -78,8 +110,8 @@ const Profile = () => {
               </label>
               <Field
                 type="text"
-                placeholder={profiles?.name}
                 name="name"
+                placeholder={data_names}
                 autoComplete="off"
               />
 
@@ -91,8 +123,8 @@ const Profile = () => {
               </label>
               <Field
                 type="text"
-                placeholder={profiles?.email}
                 name="email"
+                placeholder={data_email}
                 autoComplete="off"
               />
 
@@ -104,11 +136,22 @@ const Profile = () => {
               </label>
               <Field
                 type="text"
-                placeholder={profiles?.mobile}
                 name="mobile"
+                placeholder={data_mobile}
                 autoComplete="off"
               />
-
+              <label>
+                Username:{" "}
+                {errors.username && touched.username ? (
+                  <sub style={{ color: "red" }}>{errors.username}</sub>
+                ) : null}
+              </label>
+              <Field
+                type="text"
+                name="username"
+                placeholder={data_username}
+                autoComplete="off"
+              />
               <label>
                 Password:{" "}
                 {errors.password && touched.password ? (
@@ -117,8 +160,8 @@ const Profile = () => {
               </label>
               <Field
                 type="text"
-                placeholder={profiles?.password}
                 name="password"
+                placeholder={data_password}
                 autoComplete="off"
               />
 
@@ -127,8 +170,10 @@ const Profile = () => {
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </Field>
-              {!edit && <button type="submit">Done</button>}
-              {!edit && <button onClick={handleEdit}>Cancel</button>}
+              <button type="submit">Done</button>
+              <button type="button" onClick={() => setEdit(true)}>
+                Cancel
+              </button>
             </Form>
           )}
         </Formik>

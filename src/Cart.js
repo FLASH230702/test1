@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const Cart = () => {
+  const { id } = useParams();
   const prodprice1 = 28.69;
   const [numberofitems, setNumberOfItems] = useState(1);
   const [money, setMoney] = useState([

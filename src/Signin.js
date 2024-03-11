@@ -1,38 +1,50 @@
-import React from "react";
-import "boxicons";
+import React, { useState, useEffect } from "react";
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { Signin, change } from "./redux/counter";
+import { change, Signin } from "./redux/counter";
 import * as Yup from "yup";
-import useFetch from "./useFetch";
-import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory, Link } from "react-router-dom";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const SignIn = () => {
   const dispatch = useDispatch();
-  var errormsgs = "";
+  const [users, setUsers] = useState([]);
   const history = useHistory();
-  const { data: profiles } = useFetch("http://localhost:8000/profiles");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const dbRef = ref(getDatabase(), "profiles");
+
+      onValue(dbRef, (snapshot) => {
+        const profiles = snapshot.val();
+
+        if (profiles) {
+          const usersArray = Object.values(profiles).map((profile) => ({
+            id: profile.id,
+            username: profile.username,
+            password: profile.password,
+          }));
+          setUsers(usersArray);
+        }
+      });
+    };
+
+    fetchData();
+
+    return () => {};
+  }, []);
 
   const handleSubmit = (values) => {
-    let found = false;
+    const user = users.find(
+      (user) =>
+        user.username === values.username && user.password === values.password
+    );
 
-    profiles.forEach((profile) => {
-      if (
-        values.username === profile.username &&
-        values.password === profile.password
-      ) {
-        found = true;
-        history.push(`/profile/${profile.id}`);
-        dispatch(change(profile.id));
-      }
-    });
-
-    if (!found) {
-      if (values.username === "admin" && values.password === "admin123") {
-        history.push("/profilelist");
-      } else {
-        console.error("The entered Username or password is incorrect");
-      }
+    if (user) {
+      history.push(`/profile/${user.id}`);
+      dispatch(change(user.id));
+    } else {
+      alert("The entered Username or password is incorrect");
     }
   };
 
@@ -59,15 +71,14 @@ const SignIn = () => {
                 <sub style={{ color: "red" }}>{errors.username}</sub>
               ) : null}
             </label>
-            <Field type="text" name="username" autocomplete="off" />
-            <i class="bx bx-low-vision"></i>
+            <Field type="text" name="username" autoComplete="off" />
             <label>
               Password:{" "}
               {errors.password && touched.password ? (
                 <sub style={{ color: "red" }}>{errors.password}</sub>
               ) : null}
             </label>
-            <Field type="password" name="password" autocomplete="off" />
+            <Field type="password" name="password" autoComplete="off" />
 
             <button type="submit" onClick={() => dispatch(Signin())}>
               Sign In
@@ -75,8 +86,6 @@ const SignIn = () => {
             <p style={{ marginTop: "20px" }}>
               Not a Member?<Link to="/signup"> Sign Up</Link>
             </p>
-
-            <h4>{errormsgs}</h4>
           </Form>
         )}
       </Formik>

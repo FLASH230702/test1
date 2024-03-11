@@ -14,6 +14,7 @@ const Navbar = () => {
   const [select4, setSelect4] = useState("");
   const { sign } = useSelector((state) => state.counter);
   const { id } = useSelector((state) => state.counter);
+  console.log(id);
 
   const handleClick1 = () => {
     setSelect1("active");
@@ -55,8 +56,9 @@ const Navbar = () => {
                 <div className="header__top__links">
                   {sign && <Link to="/signin">Sign in</Link>}
                   {!sign && <Link to={`/profile/${id}`}>Profile</Link>}
-                  {id === "0" && <Link to="/profilelist">Profile List</Link>}
+                  {id === 0 && <Link to="/profilelist">Profile List</Link>}
                   <Link to="/faq">FAQs</Link>
+                  {!sign && <Link to="/signout">Sign Out</Link>}
                 </div>
               </div>
             </div>

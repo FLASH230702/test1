@@ -62,6 +62,7 @@ const ShopDetails = () => {
 
     return () => {};
   }, []);
+  console.log(id);
 
   const productsarray = productNames.map((name, index) => ({
     name,

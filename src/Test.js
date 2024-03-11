@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const Test = () => {
   const [data, setData] = useState(null);
   const [productNames, setProductNames] = useState([]);
   const [productPrices, setProductPrices] = useState([]);
+  const { id } = useParams();
   const main = JSON.stringify(data, null, 2);
   console.log(productNames);
   console.log(productPrices);
 
   useEffect(() => {
     const fetchData = async () => {
-      const dbRef = ref(getDatabase(), "profiles");
+      const dbRef = ref(getDatabase(), "profiles/" + id + "/cart");
 
       onValue(dbRef, (snapshot) => {
         setData(snapshot.val());
@@ -23,7 +25,7 @@ const Test = () => {
   }, []);
   useEffect(() => {
     const fetchData = async () => {
-      const dbRef = ref(getDatabase(), "profiles");
+      const dbRef = ref(getDatabase(), "profiles/" + id + "/cart");
 
       onValue(dbRef, (snapshot) => {
         const profiles = snapshot.val();
