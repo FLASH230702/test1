@@ -32,23 +32,7 @@ export const SignupSchema = Yup.object().shape({
 
 const Signup = (props) => {
   const history = useHistory();
-  const cart = {
-    product1: false,
-    product2: false,
-    product3: false,
-    product4: false,
-    product5: false,
-    product6: false,
-    product7: false,
-    product8: false,
-    product9: false,
-    product10: false,
-    product11: false,
-    product12: false,
-    product13: false,
-    product14: false,
-    product15: false,
-  };
+  const cart = {};
   const [done, setDone] = useState(true);
   const date = new Date();
   const keyID = date.getTime() + Math.floor(Math.random() * 1000);

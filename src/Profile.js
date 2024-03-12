@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Formik, Form, Field } from "formik";
 import { SignupSchema } from "./Signup";
 import React, { useState, useEffect } from "react";
-import { getDatabase, ref, onValue, set } from "firebase/database";
+import { getDatabase, ref, onValue, set, get } from "firebase/database";
 import { app } from "./firebase";
 
 const db = getDatabase(app);

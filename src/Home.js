@@ -30,18 +30,34 @@ const Home = () => {
                       Shop now
                     </Link>
                     <div className="hero__social">
-                      <Link to="/home">
+                      <a
+                        href="https://www.facebook.com"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
                         <box-icon name="facebook" type="logo" />
-                      </Link>
-                      <Link to="/home">
+                      </a>
+                      <a
+                        href="https://www.x.com"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
                         <box-icon name="twitter" type="logo" />
-                      </Link>
-                      <Link to="/home">
+                      </a>
+                      <a
+                        href="https://www.pinterest.com"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
                         <box-icon name="pinterest" type="logo" />
-                      </Link>
-                      <Link to="/home">
+                      </a>
+                      <a
+                        href="https://www.instagram.com"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
                         <box-icon name="instagram" type="logo" />
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -63,7 +79,7 @@ const Home = () => {
                 </div>
                 <div className="banner__item__text">
                   <h2>Clothing Collections 2030</h2>
-                  <Link to="/">Shop now</Link>
+                  <Link to="/shop">Shop now</Link>
                 </div>
               </div>
             </div>
@@ -74,7 +90,7 @@ const Home = () => {
                 </div>
                 <div className="banner__item__text">
                   <h2>Accessories</h2>
-                  <Link to="/">Shop now</Link>
+                  <Link to="/shop">Shop now</Link>
                 </div>
               </div>
             </div>
@@ -85,7 +101,7 @@ const Home = () => {
                 </div>
                 <div className="banner__item__text">
                   <h2>Shoes Spring 2030</h2>
-                  <Link to="/">Shop now</Link>
+                  <Link to="/shop">Shop now</Link>
                 </div>
               </div>
             </div>

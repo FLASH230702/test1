@@ -5,6 +5,7 @@ export const counterSlice = createSlice({
   initialState: {
     sign: true,
     id: 100,
+    ud: 100,
     prod: 0,
   },
   reducers: {
@@ -16,6 +17,7 @@ export const counterSlice = createSlice({
     },
     change: (state, action) => {
       state.id = action.payload;
+      state.ud = action.payload;
     },
     prodchangeup: (state) => {
       state.prod += 1;

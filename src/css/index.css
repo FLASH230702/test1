@@ -819,16 +819,19 @@ ol {
   margin: 20px 0;
 }
 .profile-details button {
-  background: #f1356d;
-  font-size: 15px;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin: 10px;
-  height: 35px;
-  width: 70px;
+  position: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 30px;
+  width: 150px;
+  border: none;
+  color: #ffffff;
+  background: #000000;
+  letter-spacing: 4px;
+  margin-left: 20px;
+  margin-bottom: 100px;
 }
 .profile-details label {
   text-align: left;
@@ -2195,6 +2198,7 @@ ol {
   width: 200px;
   border: none;
   text-decoration: none;
+  margin-bottom: 100px;
 }
 .continue__btn.continue__btn.update__btn button box-icon {
   margin-right: 2px;
@@ -2310,4 +2314,5 @@ ol {
   padding: 12px 10px;
   text-align: center;
   letter-spacing: 2px;
+  margin-bottom: 100px;
 }

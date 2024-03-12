@@ -100,7 +100,7 @@ const Navbar = () => {
               <Link to="/">
                 <img src={heart} alt="Like" />
               </Link>
-              <Link to="/cart">
+              <Link to={`/cart/${id}`}>
                 <img src={bag} alt="Cart" />
               </Link>
             </div>

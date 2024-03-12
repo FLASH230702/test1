@@ -1,13 +1,17 @@
-import { useParams } from "react-router-dom/cjs/react-router-dom";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import payment from "./img/details-payment.png";
 import heart from "./img/icons/heart.png";
 import compare from "./img/icons/compare.png";
 import React, { useState, useEffect } from "react";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue, set, get } from "firebase/database";
+import { app } from "./firebase";
+import { useSelector } from "react-redux";
+
+const db = getDatabase(app);
 
 const ShopDetails = () => {
   const { id } = useParams();
+  const { ud } = useSelector((state) => state.counter);
   const { qtn, setQtn } = useState(1);
   const { changeddown, setChangedDown } = useState("black");
   const { changedup, setChangedUp } = useState("black");
@@ -18,6 +22,7 @@ const ShopDetails = () => {
   const [productDescrip, setProductDescrip] = useState([]);
   const [productProd, setProductProd] = useState([]);
   const [productQuan, setProductQuan] = useState([]);
+  const [text, setText] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,7 +67,6 @@ const ShopDetails = () => {
 
     return () => {};
   }, []);
-  console.log(id);
 
   const productsarray = productNames.map((name, index) => ({
     name,
@@ -94,6 +98,23 @@ const ShopDetails = () => {
       setChangedDown("black");
     }
   };
+  const handleClick = () => {
+    const cartRef = ref(db, `profiles/${ud}/cart`);
+    get(cartRef).then((snapshot) => {
+      const existingCart = snapshot.val() || {};
+      const newProduct = {
+        id: id,
+        value: true,
+      };
+      const updatedCart = {
+        ...existingCart,
+        [`product${id}`]: newProduct,
+      };
+      set(cartRef, updatedCart);
+    });
+    setText("Item Added To Cart");
+  };
+  console.log(filteredProductsArray);
   return (
     <div className="main">
       {filteredProductsArray.map((shop) => (
@@ -210,9 +231,10 @@ const ShopDetails = () => {
                           />
                         </div>
                       </div>
-                      <button to="" className="primary-btn">
+                      <button onClick={handleClick} className="primary-btn">
                         add to cart
                       </button>
+                      <h4>{text}</h4>
                     </div>
                     <div className="product__details__btns__option">
                       <Link to="/shop">
